@@ -1,0 +1,39 @@
+<ScatterTextWidget>:
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        height: 200
+        size_hint_y: None
+
+        TextInput:
+            id: textinput
+            font_size: 150
+            text: 'default'
+            size_hint_x: .6
+
+        Slider:
+            id: slider
+            orientation: 'vertical'
+            min: 10
+            max: 300
+            value: 75
+            size_hint_x: .2
+
+        Label:
+            id: label_textsize
+            text: "Min text size: " + str(slider.min) + "\n" + "Max text size: " + str(slider.max) + "\n" + "Text size:\n" + str(slider.value)
+            size_hint_x: .2
+
+    FloatLayout:
+        Scatter:
+            id: scatter
+            pos: (0, 0)
+            Label:
+                id: label_copy
+                text: textinput.text
+                font_size: slider.value
+                color: (1, 0, 0 , 0.5)
+                halign: 'center'
+                text_size: (scatter.width, None)
+                pos: (scatter.width/2, scatter.height/2)
