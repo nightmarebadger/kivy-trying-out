@@ -32,15 +32,15 @@
             size_hint_x: .2
             font_size: top_height * .2
 
-    FloatLayout:
-        Scatter:
-            id: scatter
-            pos: (0, 0)
-            Label:
-                id: label_copy
-                text: textinput.text
-                font_size: slider.value
-                color: (1, 0, 0 , 0.5)
-                halign: 'center'
-                text_size: (scatter.width, None)
-                pos: (scatter.width/2, scatter.height/2)
+    Scatter:
+        id: scatter
+        pos: (0, 0)
+
+        Label:
+            id: label_copy
+            text: textinput.text
+            font_size: slider.value
+            color: (1, 0, 0 , 0.5)
+            halign: 'center'
+            text_size: (scatter.width, None)
+            pos: (scatter.width/2, scatter.height/2)
