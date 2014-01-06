@@ -12,7 +12,6 @@
     FloatLayout:
         Scatter:
             id: scatter
-            pos: (0, 0)
 
             Label:
                 id: label_copy
@@ -20,20 +19,21 @@
                 font_size: 150
                 halign: 'center'
                 text_size: (scatter.width, None)
-                pos: (scatter.width/2, scatter.height/2)
+                pos: (root.width * .5, scatter.height * .5)
                 color: root.text_colour
 
-    BoxLayout:
-        orientation: 'horizontal'
-        height: 150
-        size_hint_y: None
+            Label:
+                text: textinput.text[:3][::-1]
+                font_size: 100
+                color: root.text_colour
+                size_hint_x: .5
+                pos: (scatter.width * .1, 0)
+                halign: 'left'
 
-        Label:
-            text: textinput.text[:3][::-1]
-            font_size: 100
-            color: root.text_colour
-
-        Label:
-            text: textinput.text[-3:][::-1]
-            font_size: 100
-            color: root.text_colour
+            Label:
+                text: textinput.text[-3:][::-1]
+                font_size: 100
+                color: root.text_colour
+                size_hint_x: .5
+                pos: (scatter.width * .9, 0)
+                halign: 'right'
